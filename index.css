@@ -9,21 +9,78 @@ body {
   background: #f4f4f4;
 }
 
+
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #333;
+  background: #979797;
   color: white;
-  top: 0px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.navbar-icons-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
 }
 
 .navbar-icons {
-  display: flex;
-  align-items: center;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+}
+
+.navbar-icons:hover {
+  background: #838383;
+  color: #ffffff;
 }
 
 .navbar a {
   color: white;
   text-decoration: none;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  width: 80px;
+  height: 40px;
+  font-weight: 700;
+  /* text-shadow:
+        -0.1vw -0.1vw #576355, 
+        0.1vw -0.1vw #576355,
+        -0.1vw 0.1vw #576355,
+        0.1vw 0.1vw #576355; */
 }
+
+.displaybox {
+  position: relative;
+  display: flex;
+  gap: 60px;
+}
+  .samplebox {
+    position: relative;
+    display: block;
+    background: #aaaaaa;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 5px 5px rgba(15, 15, 15, 0.1);
+  }
+    #map{
+      top: 150px;
+      left: 180px;
+      /* border: 2px solid red; */
+      width: 500px;
+      height: 400px;
+    }
+    #updates{
+      top: 150px;
+      left: 180px;
+      /* border: 2px solid red; */
+      width: 200px;
+      height: 400px;
+    }
