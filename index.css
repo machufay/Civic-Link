@@ -1,7 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;;
+  box-sizing: border-box;
 }
 
 body {
@@ -9,78 +9,130 @@ body {
   background: #f4f4f4;
 }
 
+/* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #979797;
+        color: white;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #979797;
-  color: white;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
+      .navbar-icons-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 2rem;
+      }
 
-.navbar-icons-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 2rem;
-}
+      .navbar-icons {
+        font-size: 1.1rem;
+        padding: 0.5rem 1.2rem;
+        border-radius: 4px;
+      }
 
-.navbar-icons {
-  font-size: 1.1rem;
-  padding: 0.5rem 1.2rem;
-  border-radius: 4px;
-}
+      .navbar-icons:hover {
+        background: #838383;
+        color: #ffffff;
+      }
 
-.navbar-icons:hover {
-  background: #838383;
-  color: #ffffff;
-}
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        padding: 10px 10px 10px 10px;
+        width: 80px;
+        height: 40px;
+        font-weight: 700;
+        /* text-shadow:
+              -0.1vw -0.1vw #576355, 
+              0.1vw -0.1vw #576355,
+              -0.1vw 0.1vw #576355,
+              0.1vw 0.1vw #576355; */
+      }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  padding: 10px 10px 10px 10px;
-  width: 80px;
-  height: 40px;
-  font-weight: 700;
-  /* text-shadow:
-        -0.1vw -0.1vw #576355, 
-        0.1vw -0.1vw #576355,
-        -0.1vw 0.1vw #576355,
-        0.1vw 0.1vw #576355; */
-}
+/* Submit */
+      .submitbox {
+        position: relative;
+        display: block;
+        width: 450px;
+        height: 100px;
+        top: 80px;
 
-.displaybox {
-  position: relative;
-  display: flex;
-  gap: 60px;
-}
-.samplebox {
-  position: relative;
-  top: 200px;
-  display: block;
-  background: #aaaaaa;
-  color: #ffffff;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 5px 5px rgba(15, 15, 15, 0.1);
-  }
-    #map{
-      left: 180px;
-      /* border: 2px solid red; */
-      width: 500px;
-      height: 400px;
-    }
-    #updates{
-      left: 180px;
-      /* border: 2px solid red; */
-      width: 200px;
-      height: 400px;
-    }
+        /* centering the box with the page */
+        left: calc(50% - 225px); /* 50% of page width - half the box width*/
+
+        text-align: center;
+        background: #aaaaaa;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        /* box-shadow: 0 2px 8px rgba(0,0,0,0.08); */
+      }
+
+      .submit-button {
+        /* giving it a margin for the top */
+        top: 10px;
+        /* added a z-index to bring the button to the front */
+        z-index: 1000;
+
+        /* button styling */
+        width: 300px;
+        height: 150px;
+        position: relative;
+        background-color: #f3f3f3;
+        border-color: #cccccc;
+        border-width: 2px;
+        border-radius: 50px;
+        box-shadow: -5px 5px #888888;
+
+        /* text styling for the button */
+        padding: 5px 10px 5px 10px; /* clockwise, ^ > v <*/
+        font-size: 1.2rem;
+        text-decoration: none;
+        font-weight: 600;
+        color: #636363;
+      }
+
+      .submit-button:hover {
+        /* button, when hover, reduces shadow and gets smaller */
+          box-shadow: -2px 2px #888888;
+          transform: scale(0.9);
+      }
+  
+/* Content boxes: map and updates outline */
+      .contentbox {
+        position: relative;
+        display: flex;
+        gap: 60px;
+      }
+      .samplebox {
+        position: relative;
+        top: 110px;
+        display: block;
+        background: #aaaaaa;
+        color: #ffffff;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 5px 5px rgba(15, 15, 15, 0.1);
+        }
+          #map{
+            left: 180px;
+            /* border: 2px solid red; */
+            width: 500px;
+            height: 400px;
+          }
+          #updates{
+            left: 180px;
+            /* border: 2px solid red; */
+            width: 200px;
+            height: 400px;
+          }
