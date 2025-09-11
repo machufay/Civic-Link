@@ -112,9 +112,11 @@ body {
       .contentbox {
         position: relative;
         display: flex;
-        gap: 60px;
+        gap: 29px; /*THIS CONTROLS THE GAP BETWEEN MAP AND UPDATES*/
       }
       .samplebox {
+        left: calc(50% - 365px);
+
         position: relative;
         top: 110px;
         display: block;
@@ -125,13 +127,11 @@ body {
         box-shadow: 0 5px 5px rgba(15, 15, 15, 0.1);
         }
           #map{
-            left: 180px;
             /* border: 2px solid red; */
             width: 500px;
             height: 400px;
           }
           #updates{
-            left: 180px;
             /* border: 2px solid red; */
             width: 200px;
             height: 400px;
