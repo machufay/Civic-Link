@@ -23,6 +23,15 @@ body {
         box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       }
 
+      .home-logo{
+        font-size: 1rem;
+        position: absolute;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+        width: 120px !important;
+      }
+
       .navbar-icons-flex {
         display: flex;
         justify-content: center;
