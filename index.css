@@ -10,12 +10,7 @@ body {
 }
 
 
-
-
-
-
-
-/* !!!!! NAVBAR      !!!!!*/
+/* #region===== NAVBAR =====*/
 
         /* Navbar styling */
       .navbar {
@@ -27,7 +22,7 @@ body {
         height: 50px;
         display: flex;
         align-items: center;
-        z-index: 1000;
+        z-index: 1000 !important;
         box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       }
 
@@ -73,11 +68,9 @@ body {
               -1px 1px #555555,
               1px 1px #555555; */
       }
+/* #endregion */
 
-
-
-
-/* !!!!! HOME PAGE   !!!!!*/
+/* #region===== HOME PAGE =====*/
 
         /* "submit construction updates here" */
               .headerbox-home {
@@ -104,7 +97,7 @@ body {
                 /* giving it a margin for the top */
                 top: 10px;
                 /* added a z-index to bring the button to the front */
-                z-index: 1000;
+                z-index: 10;
 
                 /* button styling */
                 width: 300px;
@@ -158,10 +151,9 @@ body {
                     width: 200px;
                     height: 400px;
                   }
+/* #endregion */
 
-
-
-/* !!!!! SUBMIT PAGE !!!!!*/
+/* #region===== FORM PAGE =====*/
 
         /* "Submit Projects...If you're a county engineer, log in below */
         .headerbox-form {
@@ -193,7 +185,39 @@ body {
           font-weight: 600;
         }
         
-        
+        /* login form */
+        .login-box {
+          position: relative;
+          display: block;
+          width: 500px;
+          height: 500px;
+          top: 120px;
+          left: calc(50% - 250px); /* 50% of page width - half the box width*/
+          text-align: center;
+          background: #aaaaaa;
+          color: white;
+          border: none;
+          padding: 20px;
+          border-radius: 5px;
+        }
+
+        .submit-form {
+          margin-top: 20px;
+
+          position: relative;
+          display: block;
+          width: 500px;
+          height: 500px;
+          top: 120px;
+          left: calc(50% - 250px); /* 50% of page width - half the box width*/
+          text-align: center;
+          background: #aaaaaa;
+          color: white;
+          border: none;
+          padding: 20px;
+          border-radius: 5px;
+        }
+/* #endregion */
 
 
 

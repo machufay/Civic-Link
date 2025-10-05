@@ -1,0 +1,17 @@
+ContentService
+Use to initializee Content service commands, builds reponses 
+
+return ContentService.createTextOutput("Hello world");
+
+or 
+
+setMimetype 
+
+ContentService.MimeType.JSON
+
+Doesnt work unless setup thru node.js 
+
+Const CANNOT be changed  
+
+async makes functions and lines of code in functions run simultaneously unless specififed
+await makes function/line of code wait like in normal code.
