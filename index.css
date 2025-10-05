@@ -76,11 +76,11 @@ body {
 
 
 
-      
+
 /* !!!!! HOME PAGE   !!!!!*/
 
         /* "submit construction updates here" */
-              .submitbox {
+              .headerbox-home {
                 position: relative;
                 display: block;
                 width: 450px;
@@ -163,4 +163,40 @@ body {
 
 /* !!!!! SUBMIT PAGE !!!!!*/
 
+        /* "Submit Projects...If you're a county engineer, log in below */
+        .headerbox-form {
+                position: relative;
+                display: block;
+                width: 450px;
+                height: 100px;
+                top: 80px;
+
+                /* centering the box with the page */
+                left: calc(50% - 225px); /* 50% of page width - half the box width*/
+
+                text-align: center;
+                background: #aaaaaa;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                /* box-shadow: 0 2px 8px rgba(0,0,0,0.08); */
+              }
+        .headerbox-form h1{
+          padding-top: 5px;
+          font-size: 1.7rem;
+        }
+        .headerbox-form h2{
+          padding-top: 10px;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+        
+        
+
+
+
+
+        
 
