@@ -1,46 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
   <title>Engineer Form</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
 </head>
-<body>
-  
-  <div class="navbar">
+
+
+
+<div class="navbar">
   <a href="index.html" class="home-logo">CIVIC LINK</a>
-    <div class="navbar-icons-flex">
-      <a href="index.html" class="navbar-icons">Home</a> 
-      <a href="form.html" class="navbar-icons">Submit</a>
-      <a href="map.html" class="navbar-icons">Map</a>
-    </div>
+      <div class="navbar-icons-flex">
+        <a href="index.html" class="navbar-icons">Home</a> 
+        <a href="form.html" class="navbar-icons">Submit</a>
+        <a href="map.html" class="navbar-icons">Map</a>
+      </div>
 </div>
 
-  <h1>Submit New Project</h1>
-  <form id="projectForm">
-    <input type="text" name="name" placeholder="Project Name" required><br>
-    <input type="text" name="location" placeholder="Location" required><br>
-    <textarea name="description" placeholder="Description" required></textarea><br>
-    <input type="text" name="demolition" placeholder="What’s being demolished?" required><br>
-    <input type="text" name="newBuild" placeholder="What’s being built?" required><br>
-    <button type="submit">Submit Project</button>
-  </form>
 
-  <script type="module">
-    import { db } from "./firebase.js";
-    import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    document.getElementById("projectForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const formData = Object.fromEntries(new FormData(e.target).entries());
-      formData.date = new Date().toLocaleDateString();
+<body>
 
-      await addDoc(collection(db, "projects"), formData);
-      alert("✅ Project Submitted!");
-      e.target.reset();
-    });
-    
-    
-  </script>
+
+  
+    <h1>Submit New Project</h1>
+    <form id="projectForm">
+      <input type="text" name="name" placeholder="Project Name" required><br>
+      <input type="text" name="location" placeholder="Location" required><br>
+      <textarea name="description" placeholder="Description" required></textarea><br>
+      <input type="text" name="demolition" placeholder="What’s being demolished?" required><br>
+      <input type="text" name="newBuild" placeholder="What’s being built?" required><br>
+      <button type="submit">Submit Project</button>
+    </form>
+
+
+
+    <script type="module">
+      import { db } from "./firebase.js";
+      import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+      document.getElementById("projectForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = Object.fromEntries(new FormData(e.target).entries());
+        formData.date = new Date().toLocaleDateString();
+
+        await addDoc(collection(db, "projects"), formData);
+        alert("✅ Project Submitted!");
+        e.target.reset();
+      });
+    </script>
+
+
+
 </body>
 </html>
