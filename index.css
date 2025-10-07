@@ -11,33 +11,37 @@ body {
 
 /* #region===== NAVBAR =====*/
 
-        /* Navbar styling */
+      /* Navbar styling */
       .navbar {
         position: fixed;
-        top: 0;
-        width: 100%;
-        background: #979797;
-        color: white;
-        height: 50px;
         display: flex;
         align-items: center;
         z-index: 1000 !important;
+        
+        top: 0;
+        width: 100%;
+        height: 50px;
+
         box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        background: #979797;
+        color: white;
       }
 
       .home-logo{
-        font-size: 1rem;
         position: absolute;
+        width: 120px !important;
+        
+        font-size: 1rem;
         font-weight: 700;
         color: white;
         text-decoration: none;
-        width: 120px !important;
       }
 
       .navbar-icons-flex {
         display: flex;
         justify-content: center;
         align-items: center;
+
         width: 100%;
         gap: 2rem;
       }
@@ -54,13 +58,14 @@ body {
       }
 
       .navbar a {
+        width: 80px;
+        height: 40px;
+        padding: 10px;
+        
+        font-weight: 700;
         color: white;
         text-decoration: none;
         text-align: center;
-        padding: 10px 10px 10px 10px;
-        width: 80px;
-        height: 40px;
-        font-weight: 700;
         /* text-shadow:
               -1px -1px #555555, 
               1px -1px #555555,
