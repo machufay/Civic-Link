@@ -16,33 +16,10 @@
   color: white;
 }
 
-.submit-button {
-  position: relative;
-  z-index: 10;
-
+#submit-button {
   top: 10px;
-  width: 300px;
-  height: 150px;
-  padding: 5px 10px 5px 10px; /* clockwise, ^ > v <*/
-  
-  background-color: #f3f3f3;
-  border-color: #cccccc;
-  border-width: 2px;
-  border-radius: 50px;
-  box-shadow: -5px 5px #888888;
-
-  font-size: 1.2rem;
-  text-decoration: none;
-  font-weight: 600;
-  color: #636363;
 }
     
-  .submit-button:hover {
-    box-shadow: -2px 2px #888888;
-    transform: scale(0.9);
-  }
-  
-
 
 /* Content boxes: map and updates outline */
 .contentbox {
