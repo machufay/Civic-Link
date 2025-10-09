@@ -23,6 +23,15 @@ main()
     const location = document.getElementById("locationid").value;
     console.log(location);
     submitData(name, age, date, location);
+    
+    //clears what you inputted into the boxes after you press submit
+    function clearSubmitInputs() {
+      document.getElementById("nameid").value = "";
+      document.getElementById("ageid").value = "";
+      document.getElementById("dateid").value = "";
+      document.getElementById("locationid").value = "";
+    }
+    clearSubmitInputs();
   });
 
 }
@@ -84,6 +93,4 @@ function STO(values){
     return obj;
   });
 }
-
-
 

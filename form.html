@@ -34,8 +34,16 @@
 
             <input type="text" placeholder="Username" class="inputs" id="username">
             <input type="text" placeholder="Password" class="inputs" id="password">
-            <button class="button" id="login-button">Login</button>
-            <a href="#" id="forgot-password">Forgot Password?</a>
+            <button class="button" id="login-button" onclick="clearLoginInputs()">Login</button>
+            
+            <script>
+              function clearLoginInputs() {
+                document.getElementById("username").value = "";
+                document.getElementById("password").value = "";
+              } //clears what you inputted into the boxes after you press login
+            </script>
+
+            <a href="#" id="forgot-password" >Forgot Password?</a>
         </form>   
     </div>
 
@@ -47,10 +55,11 @@
       <h2>Submit Project Info</h2>
             <input class="inputs" id="nameid" placeholder="Put name here"></input>
             <input class="inputs" id="ageid" placeholder="Put age here"></input>
-            <input class="inputs" id="dateid" placeholder="Put date here"></input>    
-            <input class="inputs" id="locationid" placeholder="Put location here"></input>  
+            <input class="inputs" type="date" id="dateid" placeholder="Put date here"></input>    
+            <input class="inputs" id="locationid" placeholder="Location (find way to make input for google coords)"></input>  
           
             <button class="button" id="submitid">Submit</button>
+            
     </div>
     
     <div id ="userlist"></div>
