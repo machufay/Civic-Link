@@ -53,6 +53,8 @@ body{
   text-align: center;
   background: rgba(170, 170, 170, 0.85);
   color: white;
+
+  border: 3px dashed rgb(212, 212, 212);
 }
   .login h2 {
     margin-top: 20px;
@@ -122,6 +124,8 @@ body{
   background: #aaaaaa;
   color: white;
   border: none;
+
+  border: 3px solid rgb(212, 212, 212);
 }
   .submit h2 {
     margin-top: 20px;
