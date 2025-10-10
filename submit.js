@@ -15,8 +15,9 @@ main()
   //do not mess w awaits here
   showdata()
 
-  document.getElementById("submitid").addEventListener("click", function(){
-
+document.getElementById("projectForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    
     const age = document.getElementById("ageid").value;
     const name = document.getElementById("nameid").value;
     const date = document.getElementById("dateid").value;

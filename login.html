@@ -20,77 +20,53 @@
 
 
 
-    <!--  "Submit Projects... If you're a country engineer, login below."  -->
-    <div class="headerbox-form">
-        <h1>Login to Submit Projects</h1>
-        <h2>If you're a county engineer, login below.</h2>
-    </div>  
+<!--  "Submit Projects... If you're a country engineer, login below."  -->
+<div class="headerbox-form">
+    <h1>Login to Submit Projects</h1>
+    <h2>If you're a county engineer, login below.</h2>
+</div>  
     
 
 
-    <!-- login form -->
-    <div class="login">
-        <form>
-            <h2>Login Form</h2>
-
-            <input type="text" placeholder="Username" class="inputs" id="username">
-            <input type="text" placeholder="Password" class="inputs" id="password">
-            <button class="button" id="login-button" onclick="clearLoginInputs()">Login</button>
-            
-            <script>
-              function clearLoginInputs() {
-                document.getElementById("username").value = "";
-                document.getElementById("password").value = "";
-              } //clears what you inputted into the boxes after you press login
-            </script>
-
-            <a href="#" id="forgot-password" >Forgot Password?</a>
-        </form>   
-    </div>
-
-    <!-- Submit form -->
-     <div class="submit">
-      <h2>Submit Project Info</h2>
-            <input class="inputs" id="nameid" placeholder="Put name here"></input>
-            <input class="inputs" id="ageid" placeholder="Put age here"></input>
-            <input class="inputs" type="date" id="dateid" placeholder="Put date here"></input>    
-            <input class="inputs" id="locationid" placeholder="Location (find way to make input for google coords)"></input>  
-          
-            <button class="button" id="submitid">Submit</button>
-            
-    </div>
+<!-- login form -->
+<div class="login">
+  <h2>Login Form</h2>
+    <form id="loginForm">
+        <input type="text" placeholder="Username" class="inputs" id="username" required>
+        <input type="password" placeholder="Password" class="inputs" id="password" required>
+        <button type="submit" class="button" id="login-button">Login</button>
+    </form>   
     
-    <div id ="userlist"></div>
+  <p id="message"></p>
+  <a href="#" id="forgot-password" >Forgot Password?</a>
 
-
-    <!-- FIREBASE JUNK SCRIPT-->
-    <!-- <h1>Submit New Project</h1>
-    <form id="projectForm">
-      <input type="text" name="name" placeholder="Project Name" required><br>
-      <input type="text" name="location" placeholder="Location" required><br>
-      <textarea name="description" placeholder="Description" required></textarea><br>
-      <input type="text" name="demolition" placeholder="What’s being demolished?" required><br>
-      <input type="text" name="newBuild" placeholder="What’s being built?" required><br>
-      <button type="submit">Submit Project</button>
-    </form>
-
-
-    <script type="module">
-      import { db } from "./firebase.js";
-      import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-      document.getElementById("projectForm").addEventListener("submit", async (e) => {
+      <script>
+      document.getElementById("loginForm").addEventListener("submit", async (e) => {
         e.preventDefault();
-        const formData = Object.fromEntries(new FormData(e.target).entries());
-        formData.date = new Date().toLocaleDateString();
 
-        await addDoc(collection(db, "projects"), formData);
-        alert("✅ Project Submitted!");
-        e.target.reset();
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        try {
+          const response = await fetch("http://localhost:5000/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            // Redirect or show next page
+            window.location.href = "submit.html";
+          } else {
+            document.getElementById("message").innerText = "Invalid login.";
+          }
+        } catch (error) {
+          console.error(error);
+          document.getElementById("message").innerText = "Server error.";
+        }
       });
-    </script> -->
-
-
-
+      </script>
+</div>
 </body>
-</html>

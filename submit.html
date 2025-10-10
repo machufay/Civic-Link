@@ -1,6 +1,7 @@
 <head>
   <title>Engineer Form</title>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="submit.css">
   <link rel="stylesheet" href="login.css">
   <script defer src="submit.js"></script>
 </head>
@@ -16,3 +17,22 @@
       <a href="submit.html" class="navbar-icons">Submit</a>
       </div> 
 </div>
+
+<div class="headerbox-form">
+    <h1>Submit Projects</h1>
+    <h2>Fill in the fields to submit a project.</h2>
+</div>
+
+<!-- Submit form -->
+ <div class="submit">
+  <h2>Submit Project Info</h2>
+      <form id="projectForm">
+        <input class="inputs" id="nameid" placeholder="Put name here" required></input>
+        <input class="inputs" id="ageid" placeholder="Put age here" required></input>
+        <input class="inputs" type="date" id="dateid" placeholder="Put date here" required></input>    
+        <input class="inputs" id="locationid" placeholder="Location (find way to make input for google coords)" required></input>  
+        <button type="submit" class="button" id="submitid">Submit</button> 
+      </form>
+</div>
+
+<div id ="userlist"></div>
