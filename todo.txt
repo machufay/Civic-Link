@@ -1,9 +1,0 @@
-TO DO LIST:
-
-Frontend:
-- create div that appears in home page for every project submitted
-
-Backend:
-- Location doesn't work
-- Find way to allow user to submit google coords
-- Create login backend (w/ node.js and host it to the internet using a free site like Render)
