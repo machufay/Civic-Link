@@ -7,8 +7,7 @@ If you try logging in without hosting, it will say "server error".
 
 Hosting login backend:
 1) download node.js 
-2) in vscode terminal, type in: "cd C:\Users\matth\Civic-Link\backendLogin"
-3) type "node server.js"
+2) in vscode terminal, type: "node backendLogin/server.js"
 4) if it says: "✅ Server running on http://localhost:5000", then the server is hosted and logins should work locally.
 5) to turn off server: "ctrl+C" in terminal
 
