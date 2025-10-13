@@ -2,7 +2,6 @@
   <title>Engineer Form</title>
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/submit.css">
-  <link rel="stylesheet" href="css/login.css">
   <script defer src="submit.js"></script>
 </head>
 
@@ -27,12 +26,28 @@
  <div class="submit">
   <h2>Submit Project Info</h2>
       <form id="projectForm">
-        <input class="inputs" id="nameid" placeholder="Put name here" required></input>
-        <input class="inputs" id="ageid" placeholder="Put age here" required></input>
-        <input class="inputs" type="date" id="dateid" placeholder="Put date here" required></input>    
-        <input class="inputs" id="locationid" placeholder="Location (find way to make input for google coords)" required></input>  
+
+      <div class="entire-info">
+
+        <div class="left-info">
+          <h3>Project name</h3>
+          <input class="inputs" id="nameid" placeholder="Ex:" required></input>
+          <h3>Project [age]</h3>
+          <input class="inputs" id="ageid" placeholder="Put age here" required></input>
+          <h3>Start date</h3>
+          <input class="inputs" type="date" id="dateid" placeholder="Put date here" required></input>    
+        </div>
+
+        <div class="right-info">
+          <h3>Description</h3>
+          <textarea class="inputs" id="descriptionid" placeholder="Ex: This project's purpose is to..." required></textarea>  
+          <h3>Location</h3>
+          <input class="inputs" id="locationid" placeholder="(find way to make input for coords)" required></input>  
+        </div>
+
+        </div>
+
         <button type="submit" class="button" id="submitid">Submit</button> 
       </form>
 </div>
-
 <div id ="userlist"></div>

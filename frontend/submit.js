@@ -20,11 +20,13 @@ document.getElementById("projectForm").addEventListener("submit", async (e) => {
     
     const age = document.getElementById("ageid").value;
     const name = document.getElementById("nameid").value;
-    const date = document.getElementById("dateid").value;
+    //const date = document.getElementById("dateid").value;
+    const date = Date();
     const location = document.getElementById("locationid").value;
     console.log(location);
     submitData(name, age, date, location);
     
+
     //clears what you inputted into the boxes after you press submit
     function clearSubmitInputs() {
       document.getElementById("nameid").value = "";
