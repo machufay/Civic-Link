@@ -3,6 +3,7 @@
   <link rel="stylesheet" href="frontend/css/index.css">
   <link rel="stylesheet" href="frontend/css/home.css">
   <script defer src="frontend/submit.js"></script>
+  <script defer src="frontend/search.js"></script>
 </head>
 
 
@@ -13,6 +14,7 @@
       <a href="frontend/login.html" class="navbar-icons">Login</a>
       <a href="frontend/map.html" class="navbar-icons">Updates</a>
       <a href="frontend/submit.html" class="navbar-icons">Submit</a>
+      <button class="search-button" id="openSearch">Search</button>
     </div>
 </div>
 
@@ -52,5 +54,14 @@
 
 </div>
         <div id ="userlist"></div>
+
+      <!--Search Pop-->
+      <div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <input type="text" class="search-input" placeholder="Type to search...">
+    <button class="close-btn" id="closePopup">&times;</button>
+  </div>
+</div>
+
 </body>
 
