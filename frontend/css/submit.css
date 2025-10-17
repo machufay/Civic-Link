@@ -1,13 +1,50 @@
+body{
+  background-color: #cccccc;
+  background-attachment:fixed;
+  background-size: 100%;
+}
+
+.headerbox-form {
+  position: relative;
+  display: block;
+  left: calc(50% - 225px); 
+  
+  top: 80px;
+  width: 450px;
+  height: 100px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  
+  text-align: center;
+  background: #aaaaaa;
+  color: white;
+
+  backdrop-filter: blur(10px); /* Apply blur effect to content behind */
+  -webkit-backdrop-filter: blur(10px);
+}  
+
+  .headerbox-form h1{
+    padding-top: 5px;
+    font-size: 1.7rem;
+  }
+    
+  .headerbox-form h2{
+    padding-top: 10px; 
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+
 /* submit form */
 .submit {
   position: relative;
   display: block;
-  left: calc(50% - 500px);
+  left: calc(50% - 400px);
   
   margin-top: 20px;
   top: 120px;
-  width: 1000px;
-  height: 600px;
+  width: 800px;
+  height: 550px;
   padding: 20px;
   border-radius: 10px;
 
@@ -16,7 +53,7 @@
   color: white;
   border: none;
 
-  border: 3px solid rgb(212, 212, 212);
+  border: 3px dashed #dad9d9;
 }
 
 .inputs {
@@ -64,25 +101,23 @@
 .entire-info{
   display:flex;
   flex-direction: row;
+  top: 10px;
 }
 
   /* left submit fields */
   .left-info {
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
-    margin-top: 20px;
   }
 
   .right-info {
     display: flex;
     flex-direction: column;
-    margin-left: 100px;
-    margin-top: 20px;
+    margin-left: 50px;
   }
 
   #submitid {
-    margin-top: 30px;
+    margin-top: 50px;
     width: 150px;
     height: 50px;
 

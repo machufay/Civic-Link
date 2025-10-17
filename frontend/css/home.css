@@ -55,7 +55,7 @@
   /* Popup Search Styles */
 .search-button {
   padding: 8px 16px;
-  background-color: #0078d7;
+  background-color: #aaaaaa;
   color: white;
   border: none;
   border-radius: 5px;
@@ -99,6 +99,9 @@
   border-radius: 6px;
   font-size: 16px;
 }
+  .search-input:focus{
+    outline: 3px solid #aaaaaa;
+  }
 
 .close-btn {
   background: none;
