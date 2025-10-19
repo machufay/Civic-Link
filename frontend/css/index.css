@@ -43,26 +43,23 @@ body {
         align-items: center;
 
         width: 100%;
-        gap: 2rem;
+        gap: 1.6rem;
       }
 
       .navbar-icons {
-        font-size: 1.1rem;
-        padding: 0.5rem 1.2rem;
+        font-size: 1rem;
         border-radius: 4px;
       }
 
       .navbar-icons:hover {
-        background: #838383;
+        background-color: #838383;
         color: #ffffff;
       }
 
       .navbar a {
-        width: 80px;
-        height: 40px;
-        padding: 10px;
-        
-        font-weight: 700;
+        width: 90px;
+        padding: 7px 10px 7px 10px; 
+        font-weight: 600;
         color: white;
         text-decoration: none;
         text-align: center;
