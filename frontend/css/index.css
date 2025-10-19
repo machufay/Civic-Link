@@ -98,6 +98,10 @@ body {
     transform: scale(0.9);
   }
 
+#map-test{
+  background-color:green;
+}
+
 
         
 

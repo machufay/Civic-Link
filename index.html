@@ -2,8 +2,10 @@
   <title>Community Projects</title>
   <link rel="stylesheet" href="frontend/css/index.css">
   <link rel="stylesheet" href="frontend/css/home.css">
+  <link href='https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css' rel='stylesheet' />
   <script defer src="frontend/submit.js"></script>
   <script defer src="frontend/search.js"></script>
+  <script defer src='https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js'></script>
 </head>
 
 
@@ -34,25 +36,14 @@
 <div class="contentbox">
 
     <!-- MAP BOX -->
-    <div class="samplebox" id="map">
-
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11052.003509145385!2d-87.57215379253385!3d37.971194571881156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8871d53d39903597%3A0xb064970ef31e6a21!2sSignature%20School!5e0!3m2!1sen!2sus!4v1757969325208!5m2!1sen!2sus" 
-        width="480" 
-        height="380" 
-        style="border:0"; 
-        border-radius:5px; 
-        allowfullscreen 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-
+    <div class="samplebox" id="map-container">
+      <div id='map-test' style='width: 99%; height: 99%'></div>
     </div>
             
     <!-- UPDATES BOX -->
     <div class="samplebox"id="updates">[updates]</div>
-
 </div>
+
         <div id ="userlist"></div>
 
       <!--Search Pop-->
@@ -62,6 +53,9 @@
     <button class="close-btn" id="closePopup">&times;</button>
   </div>
 </div>
+
+
+
 
 </body>
 

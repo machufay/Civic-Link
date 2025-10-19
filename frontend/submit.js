@@ -6,6 +6,15 @@
   let table;
   let titles; 
     //names of all object parameters 
+    let data = {
+  "name": "",
+  "age": "",
+  "date": "",
+  "location": "",
+  }
+  let glng;
+  let glat;
+  let pointer = null;
 
 main()
  async function main(){
@@ -13,36 +22,55 @@ main()
   await loadData();
   table = await STO(ptable);
   //do not mess w awaits here
-  showdata()
+  //showdata();
+  const map = await loadmap();
+  loadmarkers(map);
 
-document.getElementById("projectForm").addEventListener("submit", async (e) => {
+  document.getElementById("projectForm").addEventListener("submit", async (e) => {
     e.preventDefault();
-    
-    const age = document.getElementById("ageid").value;
-    const name = document.getElementById("nameid").value;
-    //const date = document.getElementById("dateid").value;
-    const date = Date();
-    const location = document.getElementById("locationid").value;
-    console.log(location);
-    submitData(name, age, date, location);
-    
+  
+    //data is the object that holds the packet sent to the sheet
+    data.name = document.getElementById("nameid").value;
+    data.age = document.getElementById("ageid").value;
+    data.date = Date();
+    console.log ([glat, glng]);
+    data.location = ([glng, glat]);
+    submitData(data);
 
     //clears what you inputted into the boxes after you press submit
     function clearSubmitInputs() {
       document.getElementById("nameid").value = "";
       document.getElementById("ageid").value = "";
       document.getElementById("dateid").value = "";
-      document.getElementById("locationid").value = "";
+    
     }
+
     clearSubmitInputs();
+    });
+
+  //records clicks on the map 
+  map.on('click', (e)=> {
+    const lng = e.lngLat.lng
+    const lat = e.lngLat.lat
+    if (!pointer)
+    { 
+      pointer = new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map);
+    }
+    else{
+      pointer.setLngLat([lng, lat]);
+    }
+    glng = lng; glat = lat;
+    console.log (glat, glng);
   });
 
+  
 }
+//End of main
 
-async function submitData(name, age, date, location) {
-  const data = { name, age, date, location};
+async function submitData(data) {
+
   const response = await fetch(
-    "https://script.google.com/macros/s/AKfycbyn_fJ3jlHz4OiKMP4vKbH1xN5b00H1GujO35r8FWykwFY2ZxqbOK-wt-ZwCllzu4FQZQ/exec",
+    "https://script.google.com/macros/s/AKfycby69UqQLrIM92Xh7unrBFHkXKXn4VoueM1I5wz1LKYzZzZvY3vpo7iRjmMI9JjL69woIQ/exec",
     {
       method: "POST",
       mode: "no-cors",
@@ -70,6 +98,7 @@ function showdata(){
 }
 
 async function loadData() {
+    //customize later with creating API keys with login information, for now just global access is fine 
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet1?key=${API_KEY}`;
     const response = await fetch(url);
     const data = await response.json();
@@ -97,3 +126,38 @@ function STO(values){
   });
 }
 
+function loadmap(){
+  mapboxgl.accessToken = 'pk.eyJ1IjoiY2l2aWMtbGluayIsImEiOiJjbWdwbzd6c2kyY3dyMmpuMnpxMTBrMm13In0.KY2MzBxSk5XV2TcEWe3MQA';
+  const map = new mapboxgl.Map({
+	container: 'map', // container ID
+	style: 'mapbox://styles/mapbox/streets-v12', // style URL
+	center: [-74.5, 40], // starting position [lng, lat]
+	zoom: 8, // starting zoom
+});
+return map;
+}
+async function loadmarkers(map){
+    const locations = await table.map(obj => obj.location);
+    console.log(locations); 
+
+    locations.forEach(location => {
+      const coords = location.split(",").map(Number);
+      console.log(coords)
+
+      if (
+        Array.isArray(coords) &&
+        coords.length === 2 &&
+        typeof coords[0] === "number" &&
+        typeof coords[1] === "number"
+      )
+        {
+        const marker = new mapboxgl.Marker().setLngLat([coords[0],coords[1]]).addTo(map);
+        marker;
+        console.log(marker)
+        }  
+        else{
+          console.log(location)
+          console.log("refused")
+        }
+    });
+}

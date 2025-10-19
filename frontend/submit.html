@@ -3,9 +3,9 @@
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/submit.css">
   <script defer src="submit.js"></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css' rel='stylesheet' />
+  <script defer src='https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js'></script>
 </head>
-
-
 
 <div class="navbar">
   <a href="../index.html" class="home-logo">CIVIC LINK</a>
@@ -26,7 +26,8 @@
  <div class="submit">
 
    <form id="projectForm">
-     
+    <div id='map-test'></div>
+    <!--change the id to 'map' to enable the map again, change it to 'map-test' to avoid -->
      <div class="entire-info">
         <h2></h2>
 
@@ -43,7 +44,7 @@
           <h3>Description</h3>
           <textarea class="inputs" id="descriptionid" placeholder="Ex: This project's purpose is to..." required></textarea>  
           <h3>Location</h3>
-          <input class="inputs" id="locationid" placeholder="(find way to make input for coords)" required></input>  
+          
         </div>
 
       </div>
