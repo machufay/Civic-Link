@@ -26,28 +26,32 @@
  <div class="submit">
 
    <form id="projectForm">
-    <div id='map-test'></div>
-    <!--change the id to 'map' to enable the map again, change it to 'map-test' to avoid -->
-     <div class="entire-info">
-        <h2></h2>
 
-        <div class="left-info">
-          <h3>Project name</h3>
-          <input class="inputs" id="nameid" placeholder="Ex:" required></input>
-          <h3>Project [age]</h3>
-          <input class="inputs" id="ageid" placeholder="Put age here" required></input>
-          <h3>Start date</h3>
-          <input class="inputs" type="date" id="dateid" placeholder="Put date here" required></input>    
-        </div>
-
-        <div class="right-info">
-          <h3>Description</h3>
-          <textarea class="inputs" id="descriptionid" placeholder="Ex: This project's purpose is to..." required></textarea>  
-          <h3>Location</h3>
-          
-        </div>
-
+    <div class="general-info">
+       <h2></h2>
+       
+       <div class="left-info">
+        <h3>Project name</h3>
+        <input class="inputs" id="nameid" placeholder="Ex:" required></input>
+        <h3>Start date</h3>
+        <input class="inputs" id="ageid" placeholder="Put age here" required></input>
+        <h3>Est. completion date</h3>
+        <input class="inputs" type="date" id="dateid" placeholder="Put date here" required></input>    
       </div>
+        
+      <div class="right-info">
+        <h3>Description</h3>
+        <textarea class="inputs" id="descriptionid" placeholder="Ex: This project's purpose is to..." required></textarea>  
+      </div>
+        
+    </div>
+
+    <div class="map-selection">
+        <h3>Select Location:</h3>
+        <div class="map-selection-container">
+          <div id='map'></div> <!--change the id to 'map' to enable the map again, change it to 'map-test' to avoid -->
+        </div>
+    </div>
 
         <button type="submit" class="button" id="submitid">Submit</button> 
   </form>
