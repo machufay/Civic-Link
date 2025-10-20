@@ -8,8 +8,8 @@ Frontend:
 - reposition the submit form so it's maneuverable (look at backend notes below)
 
 Backend:
-- create way for users to remove map markers when submitting map location
-- find way to make the home-page display map uneditable
+- Lock in map markers onto map when press submit
+- make home-page display map uneditable
 - Make adding a description possible
 - make way to edit submission
 - ~~Location doesn't work~~
