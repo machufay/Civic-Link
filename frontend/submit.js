@@ -8,7 +8,7 @@
     //names of all object parameters 
     let data = {
   "name": "",
-  "age": "",
+  "range": "",
   "date": "",
   "location": "",
   }
@@ -31,7 +31,7 @@ main()
   
     //data is the object that holds the packet sent to the sheet
     data.name = document.getElementById("nameid").value;
-    data.age = document.getElementById("ageid").value;
+    data.range = [document.getElementById("range1id").value, document.getElementById("range2id").value];
     data.date = Date();
     console.log ([glat, glng]);
     data.location = ([glng, glat]);
@@ -40,7 +40,8 @@ main()
     //clears what you inputted into the boxes after you press submit
     function clearSubmitInputs() {
       document.getElementById("nameid").value = "";
-      document.getElementById("ageid").value = "";
+      document.getElementById("range1id").value = "";
+      document.getElementById("range2id").value = "";
       document.getElementById("dateid").value = "";
     
     }
@@ -70,7 +71,7 @@ main()
 async function submitData(data) {
 
   const response = await fetch(
-    "https://script.google.com/macros/s/AKfycby69UqQLrIM92Xh7unrBFHkXKXn4VoueM1I5wz1LKYzZzZvY3vpo7iRjmMI9JjL69woIQ/exec",
+    "https://script.google.com/macros/s/AKfycbw2ee_ikBNXYbDr28sOgk6cS8v8QHHwsHGMZku6ANpxN81_llGdzTea66Bmr3OkrLMDAQ/exec",
     {
       method: "POST",
       mode: "no-cors",

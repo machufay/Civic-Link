@@ -34,11 +34,14 @@
         <h3>Project name</h3>
         <input class="inputs" id="nameid" placeholder="Ex:" required></input>
         <h3>Start date</h3>
-        <input class="inputs" id="ageid" placeholder="Put age here" required></input>
+        <input class="inputs" type="date" id="range1id" placeholder="Put est start here" required></input>
         <h3>Est. completion date</h3>
-        <input class="inputs" type="date" id="dateid" placeholder="Put date here" required></input>    
+      
+        <input class="inputs" type="date" id="range2id" placeholder="Put est end here" required></input>
+        <br>
+        <!--<input class="inputs" type="date" id="dateid" placeholder="Put date here" required></input> -->
       </div>
-        
+    
       <div class="right-info">
         <h3>Description</h3>
         <textarea class="inputs" id="descriptionid" placeholder="Ex: This project's purpose is to..." required></textarea>  
@@ -49,7 +52,7 @@
     <div class="map-selection">
         <h3>Select the location of the project site on the map below:</h3>
         <div class="map-selection-container">
-          <div id='map-test' alt="map loading error."></div> <!--change the id to 'map' to enable the map again, change it to 'map-test' to avoid -->
+          <div id='map' alt="map loading error."></div> <!--change the id to 'map' to enable the map again, change it to 'map-test' to avoid -->
         </div>
     </div>
 
