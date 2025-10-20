@@ -42,7 +42,8 @@ main()
       document.getElementById("nameid").value = "";
       document.getElementById("ageid").value = "";
       document.getElementById("dateid").value = "";
-    
+      document.getElementById("descriptionid").value = "";
+      document.getElementById("addressid").value = "";
     }
 
     clearSubmitInputs();
