@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Updates</title>
-
-  <!-- CSS -->
+<head></head>
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="css/updates.css">
-
-  <!-- Mapbox CSS -->
-  <link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet" />
-
-  <!-- Scripts -->
-  <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.2.0/web.js"></script>
-  <script defer src="frontend/search.js"></script>
+    <link rel="stylesheet" href="css/updates.css">
+  <script defer src="submit.js"></script>
+  <script defer src="search.js"></script>
+  <script>
+  const script = document.getElementById('search-js');
+  script.onload = function() {
+      mapboxsearch.autofill({
+          accessToken: 'pk.eyJ1IjoiY2l2aWMtbGluayIsImEiOiJjbWdwbzd6c2kyY3dyMmpuMnpxMTBrMm13In0.KY2MzBxSk5XV2TcEWe3MQA'
+      });
+  };
+  </script>
 </head>
 
-<body>
 
+<body>
   <!-- Navbar -->
   <div class="navbar">
     <a href="../index.html" class="home-logo">CIVIC LINK</a>
@@ -39,7 +38,6 @@
 
   <!-- Projects -->
   <div class="projects-container">
-
     <div class="project-card">
       <h2>Evansville City Hall</h2>
       <p><strong>Date Range:</strong> Jan 2025 – Apr 2026</p>
@@ -66,16 +64,14 @@
       <p><strong>Description:</strong> Construction of a modern facility featuring upgraded equipment bays, training areas, and living quarters to improve emergency response times.</p>
       <p><strong>Submitted by:</strong> Steve Doe</p>
     </div>
-
   </div>
 
-  <!-- Search Popup -->
-  <div class="popup-overlay" id="popup">
+   <!--Search Pop-->
+      <div class="popup-overlay" id="popup">
   <div class="popup-box">
-    <input type="text" class="search-input" id="search-container" placeholder="Search here...">
+    <input type="text" class="search-input" placeholder="Type to search...">
     <button class="close-btn" id="closePopup">&times;</button>
   </div>
 </div>
-
 </body>
 </html>
