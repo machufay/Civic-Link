@@ -180,7 +180,7 @@ function showrecent(){
   const now = new Date();
   for (let i = table.length - 1; i >= 0; i--) {
     if (!table[i]["date"]) return;
-    // Parse the stored date string into a Date object
+    // Turn string into a Date object
     const entryDate = new Date(table[i]["date"]);
     if (
       now.getFullYear() === entryDate.getFullYear() &&
@@ -189,8 +189,12 @@ function showrecent(){
     ) {
       const dtime = (now.getTime() - entryDate.getTime()) / 1000; // seconds
       const newLine = document.createElement("li");
+      console.log(table[i]["name"])
 
-      newLine.textContent += (table[i]["name"]+ ", ");
+      if (!table[i]["name"]){
+      continue;
+      }
+    
       newLine.textContent += (table[i]["address"]+ ", ");
 
       if (dtime < 60) newLine.textContent += ( + Math.round(dtime) + " sec ago");
@@ -202,7 +206,6 @@ function showrecent(){
         {
         newLine.textContent += ("less than an hr ago");
         } 
-
       else 
       {
         newLine.textContent += ( + Math.round(dtime/3600) + " hrs ago");
@@ -210,7 +213,6 @@ function showrecent(){
   
       newEntry.appendChild(newLine);
     }
-
   }
   if (page == "index.html")
   {

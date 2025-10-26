@@ -4,8 +4,8 @@ A website aimed to let city engineers post construction updates about their comm
 # To Do List:
 
 Frontend:
-- create div that appears in home page for every project submitted
-- reposition the submit form so it's maneuverable (look at backend notes below)
+- create div that appears in home page for every project submitted (DONE)
+- reposition the submit form so it's maneuverable (look at backend notes below) (DONE)
 - make the updates list look pretty 
 - Remove the address box (Don't worry it's useless now )
 
