@@ -1,3 +1,14 @@
+//Popup for submit (tells user their submission was successful)
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("projectForm");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // prevents page reload
+    alert("Project submitted!"); // shows the popup
+    form.reset(); // optional: clears the form fields
+  });
+});
+
 const API_KEY = "AIzaSyAoYSJ-B-i4r-jgl0n3is3VJMgBhVhwy44";
 const SHEET_ID = "1UK356MwkhS73fkZHGkeQwS_UBx9YpTf9dIunNaGbXLw";
 
