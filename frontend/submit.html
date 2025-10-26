@@ -5,6 +5,23 @@
   <script defer src="submit.js"></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css' rel='stylesheet' />
   <script defer src='https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js'></script>
+  <!--#region initialize mapbox autofill-->
+   <script
+      id="search-js"
+      defer
+      src="https://api.mapbox.com/search-js/v1.2.0/web.js"
+      >
+  </script>
+  <script>
+  const script = document.getElementById('search-js');
+  script.onload = function() {
+      mapboxsearch.autofill({
+          accessToken: 'pk.eyJ1IjoiY2l2aWMtbGluayIsImEiOiJjbWdwbzd6c2kyY3dyMmpuMnpxMTBrMm13In0.KY2MzBxSk5XV2TcEWe3MQA'
+      });
+  };
+  </script>
+  <!--#endregion-->
+
 </head>
 
 <div class="navbar">
@@ -45,15 +62,18 @@
       <div class="right-info">
         <h3>Description</h3>
         <textarea class="inputs" id="descriptionid" placeholder="Ex: This project's purpose is to..." required></textarea> 
+        
         <h3>Address</h3> 
-        <input class="inputs" id="addressid" placeholder="Ex: 1234 Hollywood Dr." required></input>
+        <input class="inputs" id="addressid" type="text" autocomplete= "address-line1" placeholder="Ex: 1234 Hollywood Dr." required></input>
+
       </div>
         
     </div>
 
     <div class="map-selection">
-        <h3>Select the location of the project site on the map below:</h3>
+        <h3>Search and select location here</h3>
         <div class="map-selection-container">
+          <div id='geocoder-container'></div>
           <div id='map' alt="map loading error."></div> <!--change the id to 'map' to enable the map again, change it to 'map-test' to avoid -->
         </div>
     </div>

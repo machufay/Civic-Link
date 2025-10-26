@@ -11,6 +11,9 @@
   "range": "",
   "date": "",
   "location": "",
+  "description": "",
+  "id":"",
+  "address": ""
   }
   let glng;
   let glat;
@@ -18,13 +21,14 @@
 
 main()
  async function main(){
-
+  
   await loadData();
   table = await STO(ptable);
   //do not mess w awaits here
   //showdata();
   const map = await loadmap();
   loadmarkers(map);
+  
 
   document.getElementById("projectForm").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -35,22 +39,29 @@ main()
     data.date = Date();
     console.log ([glat, glng]);
     data.location = ([glng, glat]);
-    submitData(data);
+    data.description = document.getElementById("descriptionid").value;
+    data.id = (Math.random()*10000000000000000);
+    data.address = document.getElementById("addressid").value
+    console.log(data.id);
+
+    submitData(data); 
+
+    const marker = new mapboxgl.Marker().setLngLat([glat, glng]).addTo(map);
+      marker;
 
     //clears what you inputted into the boxes after you press submit
     function clearSubmitInputs() {
       document.getElementById("nameid").value = "";
       document.getElementById("range1id").value = "";
       document.getElementById("range2id").value = "";
-      document.getElementById("dateid").value = "";
       document.getElementById("descriptionid").value = "";
       document.getElementById("addressid").value = "";
     }
-
     clearSubmitInputs();
     });
 
   //records clicks on the map 
+  
   map.on('click', (e)=> {
     const lng = e.lngLat.lng
     const lat = e.lngLat.lat
@@ -64,7 +75,6 @@ main()
     glng = lng; glat = lat;
     console.log (glat, glng);
   });
-
   
 }
 //End of main
@@ -72,7 +82,7 @@ main()
 async function submitData(data) {
 
   const response = await fetch(
-    "https://script.google.com/macros/s/AKfycbw2ee_ikBNXYbDr28sOgk6cS8v8QHHwsHGMZku6ANpxN81_llGdzTea66Bmr3OkrLMDAQ/exec",
+    "https://script.google.com/macros/s/AKfycbx6nM4ig2c6E6yFyk8bKNRXhStCPj7wIPoamrtNYJ57pxi_xC0Ni0qdy0tCBmUs10090A/exec",
     {
       method: "POST",
       mode: "no-cors",
@@ -108,10 +118,6 @@ async function loadData() {
     //console.log(data.values); // array of rows
   }
 
-async function finddata(){
-
-}
-
 function STO(values){
   const headers = values[0]; //headers are now an array of object titles 
   const rows = values.slice(1); //stop at 1
@@ -133,18 +139,39 @@ function loadmap(){
   const map = new mapboxgl.Map({
 	container: 'map', // container ID
 	style: 'mapbox://styles/mapbox/streets-v12', // style URL
-	center: [-74.5, 40], // starting position [lng, lat]
-	zoom: 8, // starting zoom
+	center: [-87.5, 37.9], // starting position [lng, lat]
+	zoom: 3, // starting zoom
 });
+
+const geocoder = new mapboxsearch.MapboxGeocoder()
+
+    // set the mapbox access token, geocoding API options
+    geocoder.accessToken = mapboxgl.accessToken
+    geocoder.options = {
+      language: 'en'
+    }
+    // set the mapboxgl library to use for markers and enable the marker functionality
+    geocoder.mapboxgl = mapboxgl
+    geocoder.marker = false
+    
+    console.log(geocoder.marker);
+    // bind the geocoder instance to the map instance
+    geocoder.bindMap(map)
+    geocoder.options = {
+            country: ["US"],
+            proximity: [-87.5, 37.9],
+            worldview: ["us"]           
+        };
+    // add the geocoder instance to the DOM
+    document.getElementById('map').appendChild(geocoder);
 return map;
 }
+
 async function loadmarkers(map){
     const locations = await table.map(obj => obj.location);
-    console.log(locations); 
 
     locations.forEach(location => {
       const coords = location.split(",").map(Number);
-      console.log(coords)
 
       if (
         Array.isArray(coords) &&
@@ -155,11 +182,16 @@ async function loadmarkers(map){
         {
         const marker = new mapboxgl.Marker().setLngLat([coords[0],coords[1]]).addTo(map);
         marker;
-        console.log(marker)
         }  
         else{
           console.log(location)
           console.log("refused")
         }
     });
+}
+async function deleteRowById(id) {
+  const url = `YOUR_WEB_APP_URL?deleteId=${encodeURIComponent(id)}`;
+  const response = await fetch(url);
+  const result = await response.json();
+  console.log(result);
 }

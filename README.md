@@ -8,10 +8,12 @@ Frontend:
 - reposition the submit form so it's maneuverable (look at backend notes below)
 
 Backend:
-- Lock in map markers onto map when press submit
-- make home-page display map uneditable
-- Make adding a description possible
+- Lock in map markers onto map when press submit 
+- make home-page display map uneditable (Already done?)
+- Make adding a description possible (DONE)
+    
 - make way to edit submission
+   - I dont have enough time to make this a feature
 - ~~Location doesn't work~~
 - ~~Find way to allow user to submit google coords~~
 - ~~Create login backend (w/ node.js and host it to the internet using a free site like Render)~~
