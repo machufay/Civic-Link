@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Updates</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/updates.css">
+
+  <!-- Mapbox CSS -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet" />
+
+  <!-- Scripts -->
+  <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.2.0/web.js"></script>
+  <script defer src="frontend/search.js"></script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="../index.html" class="home-logo">CIVIC LINK</a>
+    <div class="navbar-icons-flex">
+      <a href="../index.html" class="navbar-icons">Home</a>
+      <a href="login.html" class="navbar-icons">Login</a>
+      <a href="updates.html" class="navbar-icons">Updates</a>
+      <a href="submit.html" class="navbar-icons">Submit</a>
+      <button class="search-button" id="openSearch">Search</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="headerbox-updates" style="margin-top:70px;">
+    <h1>Ongoing Projects</h1>
+    <h3>Recent submissions from your community</h3>
+  </div>
+
+  <!-- Projects -->
+  <div class="projects-container">
+
+    <div class="project-card">
+      <h2>Evansville City Hall</h2>
+      <p><strong>Date Range:</strong> Jan 2025 – Apr 2026</p>
+      <p><strong>Date Submitted:</strong> Oct 10, 2025</p>
+      <p><strong>Location:</strong> 1 NW Martin Luther King Jr Blvd, Evansville, IN</p>
+      <p><strong>Description:</strong> Renovation project to restore the historic facade, modernize HVAC systems, and improve ADA accessibility. Landscaping and public seating areas will also be added.</p>
+      <p><strong>Submitted by:</strong> John Doe</p>
+    </div>
+
+    <div class="project-card">
+      <h2>Evansville Regional Airport</h2>
+      <p><strong>Date Range:</strong> Mar 2025 – Aug 2026</p>
+      <p><strong>Date Submitted:</strong> Sep 28, 2025</p>
+      <p><strong>Location:</strong> 7801 Bussing Dr, Evansville, IN</p>
+      <p><strong>Description:</strong> Terminal expansion focused on increasing passenger capacity, introducing new security checkpoints, and adding solar panels to reduce energy costs.</p>
+      <p><strong>Submitted by:</strong> Jane Doe</p>
+    </div>
+
+    <div class="project-card">
+      <h2>Evansville Fire Station No. 3</h2>
+      <p><strong>Date Range:</strong> Jun 2024 – Dec 2025</p>
+      <p><strong>Date Submitted:</strong> Aug 12, 2025</p>
+      <p><strong>Location:</strong> 321 N Main St, Evansville, IN</p>
+      <p><strong>Description:</strong> Construction of a modern facility featuring upgraded equipment bays, training areas, and living quarters to improve emergency response times.</p>
+      <p><strong>Submitted by:</strong> Steve Doe</p>
+    </div>
+
+  </div>
+
+  <!-- Search Popup -->
+  <div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <input type="text" class="search-input" id="search-container" placeholder="Search here...">
+    <button class="close-btn" id="closePopup">&times;</button>
+  </div>
+</div>
+
+</body>
+</html>
