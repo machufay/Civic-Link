@@ -51,10 +51,31 @@ body {
     height: 400px;
   }
 
-  #updates{
-    width: 200px;
-    height: 400px;
-  }
+  #updates {
+  width: 200px;          /* fixed width */
+  height: 400px;         /* fixed height */
+  overflow-y: auto;      /* vertical scrollbar appears if content is too tall */
+  overflow-x: hidden;    /* prevent horizontal scrolling */
+  word-wrap: break-word; /* break long words so they stay inside the box */
+  padding: 10px;
+  box-sizing: border-box;
+  background: #aaaaaa;   /* optional background for visibility */
+  color: #ffffff;        /* optional text color */
+}
+
+/* Optional: make the scrollbar look nicer */
+#updates::-webkit-scrollbar {
+  width: 8px;
+}
+
+#updates::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+#updates::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
      
   /* Popup Search Styles */
 .search-button {
