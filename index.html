@@ -6,6 +6,20 @@
   <script defer src="frontend/submit.js"></script>
   <script defer src="frontend/search.js"></script>
   <script defer src='https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js'></script>
+   <script
+      id="search-js"
+      defer
+      src="https://api.mapbox.com/search-js/v1.2.0/web.js"
+      >
+  </script>
+  <script>
+  const script = document.getElementById('search-js');
+  script.onload = function() {
+      mapboxsearch.autofill({
+          accessToken: 'pk.eyJ1IjoiY2l2aWMtbGluayIsImEiOiJjbWdwbzd6c2kyY3dyMmpuMnpxMTBrMm13In0.KY2MzBxSk5XV2TcEWe3MQA'
+      });
+  };
+  </script>
 </head>
 
 
@@ -42,10 +56,9 @@
             
     <!-- UPDATES BOX -->
     <div class="samplebox"id="updates">[updates]</div>
+    
 </div>
-
         <div id ="userlist"></div>
-
       <!--Search Pop-->
       <div class="popup-overlay" id="popup">
   <div class="popup-box">

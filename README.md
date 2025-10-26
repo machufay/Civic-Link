@@ -6,12 +6,14 @@ A website aimed to let city engineers post construction updates about their comm
 Frontend:
 - create div that appears in home page for every project submitted
 - reposition the submit form so it's maneuverable (look at backend notes below)
+- make the updates list look pretty 
+- Remove the address box (Don't worry it's useless now )
 
 Backend:
-- Lock in map markers onto map when press submit 
+- Lock in map markers onto map when press submit (Should be done?)
 - make home-page display map uneditable (Already done?)
 - Make adding a description possible (DONE)
-    
+
 - make way to edit submission
    - I dont have enough time to make this a feature
 - ~~Location doesn't work~~
