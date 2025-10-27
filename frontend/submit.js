@@ -1,13 +1,3 @@
-//Popup for submit (tells user their submission was successful)
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("projectForm");
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault(); // prevents page reload
-    alert("Project submitted!"); // shows the popup
-    form.reset(); // optional: clears the form fields
-  });
-});
 
 const API_KEY = "AIzaSyAoYSJ-B-i4r-jgl0n3is3VJMgBhVhwy44";
 const SHEET_ID = "1UK356MwkhS73fkZHGkeQwS_UBx9YpTf9dIunNaGbXLw";
@@ -51,6 +41,7 @@ async function main() {
 
     //data is the object that holds the packet sent to the sheet
     data.name = document.getElementById("nameid").value;
+    console.log(document.getElementById("nameid").value);
     data.range = [document.getElementById("range1id").value, document.getElementById("range2id").value];
     data.date = Date();
     console.log([glat, glng]);
@@ -59,7 +50,8 @@ async function main() {
     data.id = (Math.random() * 10000000000000000);
     // Fix: Await reverseGeocode and set address after glng, glat are set
     data.address = await reverseGeocode(glng, glat);
-
+    console.log(data);
+    
     console.log(data.id);
     const marker = new mapboxgl.Marker().setLngLat([glng, glat]).addTo(map);
     marker;
@@ -91,6 +83,17 @@ async function main() {
       
     }
     clearSubmitInputs();
+//Popup for submit (tells user their submission was successful)
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("projectForm");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // prevents page reload
+    alert("Project submitted!"); // shows the popup
+    form.reset(); // optional: clears the form fields
+  });
+});
+
   });
   }
   else{}
