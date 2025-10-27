@@ -197,23 +197,25 @@ function showrecent(){
       if (!table[i]["name"]){
       continue;
       }
-    
-      newLine.textContent += (table[i]["address"]+ ", ");
+      // Put name and address on separate lines in the list item
+      const nameEl = document.createElement('strong');
+      nameEl.textContent = table[i]["name"];
+      newLine.appendChild(nameEl);
+      newLine.appendChild(document.createElement('br'));
 
-      if (dtime < 60) newLine.textContent += ( + Math.round(dtime) + " sec ago");
-      else if (dtime < 1800) 
-        {
-          newLine.textContent += ( + Math.round(dtime/60) + " min ago")
-        }
-      else if (dtime < 3600)
-        {
-        newLine.textContent += ("less than an hr ago");
-        } 
-      else 
-      {
-        newLine.textContent += ( + Math.round(dtime/3600) + " hrs ago");
-      }
-  
+      const addrEl = document.createElement('span');
+      addrEl.textContent = table[i]["address"];
+      newLine.appendChild(addrEl);
+
+      // compute relative time string
+      let timeText = '';
+      if (dtime < 60) timeText = Math.round(dtime) + " sec ago";
+      else if (dtime < 1800) timeText = Math.round(dtime / 60) + " min ago";
+      else if (dtime < 3600) timeText = "less than an hr ago";
+      else timeText = Math.round(dtime / 3600) + " hrs ago";
+
+      // append time after address (keeps previous appearance)
+      newLine.appendChild(document.createTextNode(', ' + timeText));
       newEntry.appendChild(newLine);
     }
   }

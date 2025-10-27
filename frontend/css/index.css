@@ -138,3 +138,8 @@ body {
 
         
 
+#updateslist {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  list-style-type: none;
+}
