@@ -11,13 +11,20 @@ body {
       
   top: 80px;
   width: 450px;
-  height: 100px;
+  height: 150px;
   padding: 10px 20px;
   border-radius: 5px;
 
   text-align: center;
   background: #aaaaaa;
   color: white;
+
+  box-shadow: 0 5px 5px rgba(15, 15, 15, 0.3);
+}
+.headerbox-home h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 #submit-button {
@@ -41,7 +48,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   
-  box-shadow: 0 5px 5px rgba(15, 15, 15, 0.1);
+  box-shadow: 0 5px 5px rgba(15, 15, 15, 0.3);
   background: #aaaaaa;
   color: #ffffff;
 }
@@ -138,4 +145,13 @@ body {
 
 .close-btn:hover {
   color: #000;
+}
+
+
+hr {
+  margin-top: 15px;
+  border: 0;
+  height: 1px;
+  background-color: white; 
+  border-top: 1px solid rgba(255,255,255,0.6);
 }
