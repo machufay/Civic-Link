@@ -51,7 +51,7 @@ body {
   position: relative;
   display: block;
   left: calc(50% - 225px);
-  top: 80px;
+  top: 60px;
   width: 450px;
   height: 100px;
   padding: 10px 20px;
@@ -59,8 +59,16 @@ body {
   text-align: center;
   background: #aaaaaa;
   color: white;
+  box-shadow: 0 5px 5px rgba(15, 15, 15, 0.3);
 }
-
+  .headerbox-updates h2{
+    padding-top: 10px;
+    font-size: 1.6rem;
+  }
+  .headerbox-updates h4{
+    margin-top: 15px;
+    font-weight: 600;
+  }
 /* Project layout */
 .projects-container {
   display: flex;
