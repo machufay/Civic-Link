@@ -1,5 +1,5 @@
 body{
-  /* background-image: url(https://cdnb.artstation.com/p/assets/images/images/008/784/689/large/joshua-sengco-landscape-art.jpg?1515305209); */
+  /* background-image: url(https://images.wallpapersden.com/image/download/artistic-orange-landscape_bGxrZ2iUmZqaraWkpJRobWllrWdma2U.jpg); */
   background-color: #cccccc;
   background-attachment:fixed;
   background-size: 100%;
@@ -52,7 +52,7 @@ body{
   border-radius: 10px;
 
   text-align: center;
-  background: rgba(170, 170, 170, 0.9);
+  background: rgba(170, 170, 170, 0.95);
   color: white;
 
   border: 3px dashed rgb(212, 212, 212);
