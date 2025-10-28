@@ -32,6 +32,9 @@ h3{
 
   backdrop-filter: blur(10px); /* Apply blur effect to content behind */
   -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 5px 5px rgba(15, 15, 15, 0.3);
+
 }  
 
   .headerbox-form h1{
@@ -67,6 +70,7 @@ h3{
   border: none;
 
   border: 3px dashed #dad9d9;
+  box-shadow: 0 5px 5px rgba(15, 15, 15, 0.3);
 }
 
 .inputs {
@@ -137,6 +141,7 @@ h3{
   border: none;
 
   border: 3px dashed #dad9d9;
+  box-shadow: 0 5px 5px rgba(15, 15, 15, 0.3);
 }
   .map-selection h3{
     text-indent: 30px;

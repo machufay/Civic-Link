@@ -24,6 +24,8 @@ body{
 
   backdrop-filter: blur(10px); /* Apply blur effect to content behind */
   -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 5px 5px rgba(15, 15, 15, 0.3);
 }  
 
   .headerbox-form h1{
@@ -56,6 +58,7 @@ body{
   color: white;
 
   border: 3px dashed rgb(212, 212, 212);
+  box-shadow: 0 5px 5px rgba(15, 15, 15, 0.3);
 }
   .login h2 {
     margin-top: 20px;
