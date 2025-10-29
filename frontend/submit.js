@@ -80,6 +80,7 @@ async function main() {
       document.getElementById("range1id").value = "";
       document.getElementById("range2id").value = "";
       document.getElementById("descriptionid").value = "";
+      document.getElementById("addressid").value= "";
       
     }
     clearSubmitInputs();
